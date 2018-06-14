@@ -1,0 +1,12 @@
+---
+Name: predefinedlinkconfig
+---
+gorriecoe\Link\Models\Link:
+  extensions:
+    - gorriecoe\PredefinedLink\Extensions\PredefinedLinkExtension
+---
+Only:
+  moduleexists: 'ryanpotter/silverstripe-cms-theme'
+---
+gorriecoe\PredefinedLink\Admin\PredefinedLinkAdmin:
+  menu_icon_class: 'fas fa-link'

@@ -1,0 +1,3 @@
+mappings:
+  PredefinedLinkExtension: gorriecoe\PredefinedLink\Extensions\PredefinedLinkExtension
+  PredefinedLink: gorriecoe\PredefinedLink\Models\PredefinedLink
