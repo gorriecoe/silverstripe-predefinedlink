@@ -30,7 +30,7 @@ class PredefinedLinkExtension extends DataExtension
      * @var array
      **/
     private static $types = [
-        'Predefined' => 'Predefined link',
+        'PredefinedLink' => 'Predefined link',
     ];
 
     /**
@@ -51,7 +51,7 @@ class PredefinedLinkExtension extends DataExtension
                         PredefinedLink::get()->map()
                     )
                 )
-                ->displayIf('Type')->isEqualTo('Predefined')->end()
+                ->displayIf('Type')->isEqualTo('PredefinedLink')->end()
             );
         }
     }
@@ -67,7 +67,7 @@ class PredefinedLinkExtension extends DataExtension
     public function updateLinkURL(&$LinkURL)
     {
         $owner = $this->owner;
-        if ($owner->ClassName == PredefinedLink::class) {
+        if ($owner->Type == 'PredefinedLink') {
             $LinkURL = $owner->PredefinedLink()->LinkURL;
         }
     }
@@ -75,7 +75,7 @@ class PredefinedLinkExtension extends DataExtension
     public function updateTarget(&$target)
     {
         $owner = $this->owner;
-        if ($owner->ClassName == PredefinedLink::class) {
+        if ($owner->Type == 'PredefinedLink') {
             $target = $owner->PredefinedLink()->Target;
         }
     }
