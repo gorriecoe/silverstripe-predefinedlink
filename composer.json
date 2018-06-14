@@ -15,8 +15,7 @@
   ],
   "homepage": "http://github.com/gorriecoe/silverstripe-predefinedlink",
   "require": {
-    "silverstripe/framework": "^4",
-    "unclecheese/display-logic": "^2"
+    "gorriecoe/silverstripe-link": "^1"
   },
   "extra": {
     "installer-name": "predefinedlink"
