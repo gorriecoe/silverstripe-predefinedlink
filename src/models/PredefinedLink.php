@@ -37,4 +37,27 @@ class PredefinedLink extends Link
     private static $has_many = [
         'Links' => Link::class
     ];
+
+    protected $preview = null;
+
+    public function getPreview()
+    {
+        $preview = $this->preview;
+        if ($preview) {
+            return $preview;
+        }
+        $type = $this->getField('Type');
+        if ($this->getRelationType($type) == 'has_one' && $component = $this->getComponent($type)) {
+            if ($component->exists() && $component->hasMethod('getPreview')) {
+                $preview = $component->Preview;
+                $preview->InRelationTo = $this;
+            } else {
+                $preview = Preview::create($this);
+            }
+        } else {
+            $preview = Preview::create($this);
+        }
+        $this->preview = $preview;
+        return $preview;
+    }
 }
